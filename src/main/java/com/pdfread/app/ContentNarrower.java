@@ -16,7 +16,7 @@ public class ContentNarrower implements Callable<List<String>> {
 	// private String searchPattern = "\\d+\\.[\\s\\S]*?(?=\\?)";
 	// private String searchPattern = "\\d+?\\.\\s+?[\\s\\S]*?(?=\\?)";
 	// private String searchPattern = "\\d.*[\\S\\s]*?(?=\\?)";
-	private String searchPattern = "(?<=\\?)[\\S\\s]*?\\.\\d*";
+	private String searchPattern = "(?<=\\?)[\\S\\s]*?\\.\\d+";
 	private String content = "";
 
 	public ContentNarrower(String content) {

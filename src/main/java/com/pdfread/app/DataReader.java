@@ -34,11 +34,11 @@ public class DataReader implements Callable<String> {
 
 				PDFTextStripper pdfTextStripper = new PDFTextStripper();
 				pdfContent = pdfTextStripper.getText(pdFDocument);
-				
+
 				String reversPdfContent = new StringBuilder(pdfContent).reverse().toString();
-				
+
 				pdfContent = reversPdfContent;
-				
+
 			}
 
 		} catch (InvalidPasswordException e) {
