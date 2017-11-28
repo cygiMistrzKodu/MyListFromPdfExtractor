@@ -60,7 +60,9 @@ public class BatchFileChangeView extends Application {
 
 				String allItems = clipboard.getString();
 
-				String[] itemsSplited = allItems.split("\n");
+				String itemsWithRemovedForbidenFileNameCharacters = allItems.replaceAll("[\\\\/:*?\"<>|]", " ");
+
+				String[] itemsSplited = itemsWithRemovedForbidenFileNameCharacters.split("\n");
 
 				List<String> itmesTrimed = Stream.of(itemsSplited).map(name -> name.trim())
 						.collect(Collectors.toList());
@@ -73,10 +75,10 @@ public class BatchFileChangeView extends Application {
 
 		});
 
-//		ObservableList<String> fileNamesCandidatesListConent = FXCollections
-//				.observableArrayList("fileNamesCandidatesList", "jajo", "nunu");
-//
-//		fileNamesCandidatesList.setItems(fileNamesCandidatesListConent);
+		// ObservableList<String> fileNamesCandidatesListConent = FXCollections
+		// .observableArrayList("fileNamesCandidatesList", "jajo", "nunu");
+		//
+		// fileNamesCandidatesList.setItems(fileNamesCandidatesListConent);
 
 		fileListView = new ListView<String>();
 
@@ -157,16 +159,15 @@ public class BatchFileChangeView extends Application {
 
 			}
 
-//			System.out.println(oldFilePatchList);
-//			System.out.println("-------------------------------");
-//			System.out.println(newFilePatchList);
-			
+			// System.out.println(oldFilePatchList);
+			// System.out.println("-------------------------------");
+			// System.out.println(newFilePatchList);
+
 			oldFilePatchList = new ArrayList<>();
-			
-		    for (String path : newFilePatchList) {
-		    	oldFilePatchList.add(path);
-		    }
-			
+
+			for (String path : newFilePatchList) {
+				oldFilePatchList.add(path);
+			}
 
 		});
 
