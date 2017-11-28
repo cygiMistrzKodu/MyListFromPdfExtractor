@@ -48,7 +48,7 @@
 				<configuration>
 					<archive>
 						<manifest>
-							<mainClass>com.pdfread.app.GuiList</mainClass>
+							<mainClass>com.pdfread.app.GuiListView</mainClass>
 						</manifest>
 					</archive>
 					<descriptorRefs>
@@ -70,6 +70,31 @@
 
 
 			</plugin>
+
+			<plugin>
+				<artifactId>maven-antrun-plugin</artifactId>
+				<version>1.8</version>
+				<executions>
+					<execution>
+					<phase>package</phase> 
+						
+						<configuration>
+							<target>
+							<echo> Coppy :) ***************************** </echo>
+							<copy file="target/com.pdfread.app-1.0-SNAPSHOT-jar-with-dependencies.jar" tofile="D:\JavaGuiListMyProgram\JavaPdfList.jar" />
+							</target>
+
+						</configuration>
+						<goals>
+							<goal>run</goal>
+						</goals>
+
+					</execution>
+				</executions>
+
+
+			</plugin>
+
 
 
 		</plugins>

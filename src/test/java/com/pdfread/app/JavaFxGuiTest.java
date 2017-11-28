@@ -12,7 +12,7 @@ public class JavaFxGuiTest {
 		
 		String [] args = {"lala"};
 		
-		GuiList.main(args);
+		GuiListView.main(args);
 	
 	
 	}
